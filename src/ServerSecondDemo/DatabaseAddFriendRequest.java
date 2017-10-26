@@ -17,7 +17,6 @@ public class DatabaseAddFriendRequest implements DatabaseRequest{
     private PrintStream printout;
     private String username;
 
-
     public DatabaseAddFriendRequest(BufferedReader reader, PrintStream printout, String username) {
         this.setReader(reader);
         this.setPrintout(printout);
@@ -58,8 +57,7 @@ public class DatabaseAddFriendRequest implements DatabaseRequest{
 
         if (DatabaseFriendsRequest.friendsString.contains(input)) {
             printout.println("The user is already in your friends list!");
-        }
-        else {
+        }else {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = getConnection();
@@ -77,7 +75,5 @@ public class DatabaseAddFriendRequest implements DatabaseRequest{
                 System.out.println("function ended");
             }
         }
-
-
     }
 }
